@@ -1,8 +1,9 @@
 High-Availability Cluster Software Upgrade - Generic Uprade
 ===========================================================
 
-The intention of this guide is to provide customers guidance when upgrading a High-Availability (HA) Cluster BIG-IP configuration to a new software version.  
-For the purposes of the examples and steps that will follow; the image below will be referenced to communicate the necessary concepts
+The intention of this guide is to provide customers guidance when upgrading a High-Availability (HA) Cluster BIG-IP
+configuration to a new software version. For the purposes of the examples and steps that will follow; the image below
+will be referenced to communicate the necessary concepts.
 
 Objective:
 ----------
@@ -23,7 +24,9 @@ Lab Requirements:
 BIG-IP PRE-Upgrade Steps
 ------------------------
 
-The following steps can occur prior to a Change Control window.  While these steps are written to minimize any impact, unforeseen circumstances can arise. In very risk averse environments, steps 5 & 6 can be completed inside the Change Control Window.
+The following steps can occur prior to a Change Control window.  While these steps are written to minimize any impact,
+unforeseen circumstances can arise. In very risk averse environments, steps 5 & 6 can be completed inside the Change 
+Control Window.
 
 STEP 1: [PRE-UPGRADE]
 ~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +86,8 @@ Note: This does not affect functionality or Production services.
 Note: Current TMOS releases can be obtained from https://downloads.f5.com
 Check with your Local Account Manager & System Engineer for recommended code releases.
 
-Note: Verify available disk space and remove any unneeded or unused images.  DO NOT delete images that currently support available installations.	  
+Note: Verify available disk space and remove any unneeded or unused images.  DO NOT delete images that currently support
+available installations.	  
 
 STEP 6: [OPTIONAL PRE-UPGRADE]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +107,8 @@ Note: To target or create a specific Installation location, inputting a Volume S
 BIG-IP Upgrade Steps
 ------------------------
 
-The following steps MUST (should for more the more risk embracing) occur in a Change Control window.  Specific impacts will be noted when potential service interruptions may or will occur. Be sure to following instructions on the NOTED unit
+The following steps MUST (should for more the more risk embracing) occur in a Change Control window.  Specific impacts will
+be noted when potential service interruptions may or will occur. Be sure to following instructions on the NOTED unit
 
 STEP 7: [BOTH UNITS]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,26 +132,64 @@ STEP 8: [STANDBY UNIT ONLY: BIG-IP-02]
 | |image001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-Note License Reactivation can be automatically or manually and depends (respectively) whether your BIG-IP’s management IP address has internet access or not.	  
+Note License Reactivation can be automatically or manually and depends (respectively) whether your BIG-IP’s management IP
+address has internet access or not.	  
 
 STEP 9: [STANDBY UNIT ONLY: BIG-IP-02]
-On the STANDBY unit, Activate the NEW Boot Location.  System >> Software Management >> Boot Location.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install Configuration: Yes 
-Source Volume: Is your currently active volume.
++----------------------------------------------------------------------------------------------+
+| On the STANDBY unit, Activate the NEW Boot Location.  System >> Software Management >>       |
+|                                                                                              |
+| Boot Location.                                                                               |
+|                                                                                              |
+| Install Configuration: Yes                                                                   |
+|                                                                                              |
+| Source Volume: Is your currently active volume.                                              |
+|                                                                                              |
+| This will result ~8-10 minutes (or more) of system reboot time.  Since this is currently the |
+|                                                                                              |
+| STANDBY unit it should not impact production traffic but will affect access to the STANDBY   |
+|                                                                                              |
+| Unit.                                                                                        |
++----------------------------------------------------------------------------------------------+
+| |image001|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-This will result ~8-10 minutes (or more) of system reboot time.  Since this is currently the STNADBY unit it should not impact production traffic but will affect access to the STANBY Unit 
-
-STEP 9: [STANDBY UNIT ONLY: BIG-IP-02]
-On the STANDBY unit, when rebooted should show ONLINE (STANDBY) but will show DISCONNECTED.
-
-HA will still be intact, but you will NOT be able to sync changes during this upgrade process.
-	 
 STEP 10: [STANDBY UNIT ONLY: BIG-IP-02]
-Validate system status by reviewing logs and comparing status of various screen shots taken in Step 2
-	 
-STEP 11: [ACTIVE UNIT ONLY: BIG-IP-01]
-On the ACTIVE unit, Force the ACTIVE unit to STANBY.  Device Management >> Traffic Groups >> traffic-group-1 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------------------------+
+| On the STANDBY unit, when rebooted should show ONLINE (STANDBY) but will show DISCONNECTED.  |
+|                                                                                              |
+| HA will still be intact, but you will NOT be able to sync changes during this upgrade        |
+|                                                                                              |
+| process.                                                                                     |
++----------------------------------------------------------------------------------------------+
+| |image001|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
+STEP 11: [STANDBY UNIT ONLY: BIG-IP-02]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------------------------+
+| Validate system status by reviewing logs and comparing status of various screen shots taken  |
+|                                                                                              |
+| in Step 2                                                                                    |
++----------------------------------------------------------------------------------------------+
+| |image001|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
+STEP 12: [ACTIVE UNIT ONLY: BIG-IP-01]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------------------------+
+| On the ACTIVE unit, Force the ACTIVE unit to STANBY.  Device Management >> Traffic Groups    |
+|                                                                                              |
+| >> traffic-group-1                                                                           |
++----------------------------------------------------------------------------------------------+
+| |image001|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
 Note: This presumes a single traffic group is configured (DEFAULT).
 
@@ -179,4 +222,5 @@ Download UCS files to local machine (or file share) from BOTH UNITS.
 STEP 18: Complete
 
 Conclusion
-This process is intended to provide a general guideline to assist in upgrading BIG-IP systems configurations to new software versions in a seamless as possible manner.  Actual steps may vary depending on customer environment. 
+This process is intended to provide a general guideline to assist in upgrading BIG-IP systems configurations to new software
+versions in a seamless as possible manner.  Actual steps may vary depending on customer environment. 
