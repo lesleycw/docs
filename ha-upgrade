@@ -1,111 +1,103 @@
+
+
+
+
+ 
+
+ 
+Table of Contents
+Welcome	4
+General Pre-Installation/Configuration Requirements & Tasks	4
+NEW BIG-IP Pre-Installation/Configuration Requirements & Tasks	5
+BIG-IP Migration Steps	5
+Conclusion	8
+
+
+ 
 Welcome
-The intention of this guide is to provide customers with an approach when upgrading a High-Availability (HA) Cluster BIG-IP configuration with new hardware.  While there are many approaches, this approach accounts for the following key requirements:
-•	New Hardware must re-utilize existing allocated IP addresses to each unit (Self-IPs, Management IP)
-•	Migration of current configurations (Virtual Servers, Pools, iRules etc) will occur through configsync
-•	Old hardware configurations are maintained (aside from HA) intact and can be used as a fallback position if needed.
-For the purposes of conventions in the examples and steps that will follow; the image below will be referenced to communicate the necessary concepts
+The intention of this guide is to provide customers guidance when upgrading a High-Availability (HA) Cluster BIG-IP configuration to a new software version.  
+For the purposes of the examples and steps that will follow; the image below will be referenced to communicate the necessary concepts
  
-General Pre-Installation/Configuration Requirements & Tasks
-The following key tasks should be completed prior to any migration activities taking place.
-•	Both the Exiting HA Cluster resources and NEW resources should be on the same code release. This should be the recommended code release based on consultation with your F5 Account Team.
-•	Both Units of the Existing HA Cluster MUST be In Sync 
-•	Document the Existing HA Cluster’s Virtual Server and Pool Status. Screen shots here are very helpful for future health comparisons. QKViews can also be used.
-•	Document the Existing HA Cluster’s Configsync and failover addresses
-•	A UCS archive file should be made of BOTH BIG-IP-01 and BIG-IP-02 and copied to a locally accessible (non-BIG-IP) storage resource 
-•	A detailed understanding of the Local Self-IPs, VLANs, routing, management configuration should be documented for both BIG-IP-01 & BIG-IP-02 
-•	The physical cabling requirements (transceivers, cables etc) and rack space requirements of NEW-BIG-IP-01 & NEW-BIG-IP-02 must be accounted for. In some cases, existing cabling will be re-utilized.  In other cases where upgrades introduce new interface types (ex: copper to fiber), necessary adjustments/plans must be made.  
-NEW BIG-IP Pre-Installation/Configuration Requirements & Tasks
-The following tasks should be completed on the NEW units.  This work should be done either directly connected to each unit or in an isolated configuration network as IP’s from the Existing HA Cluster will be re-utilized. Note that the NEW units MUST match the code version of the Existing HA Cluster units
-Perform the following tasks on NEW-BIG-IP-01 and NEW-BIG-IP-02 directly connected to them or in an isolated configuration network.
-•	Configure Management IP – this must match the IP address or the intended target replacement device (BIG-IP-01 management IP to NEW-BIG-IP-01 and BIG-IP-02 management IP to NEW-BIG-IP-02
-•	Manually activate the license (as you will not have internet access from the NEW BIG-IP’s
-•	Create or Issue Device Certificates.  These can be repurposed Device Certificates from the Existing HA Cluster devices or new ones (Note: these are not Client SSL or Server SSL profile certificates)
-•	Create all VLANS on NEW-BIG-IP-01 & NEW-BIG-IP-02 as the occur on BIG-IP-01 & BIG-IP-02
-o	Create the VLANS with the EXACT name (case sensitive)
-o	VLANS can be associated with different interfaces or trunks on NEW-BIG-IP-01 & NEW-BIG-IP-02 but the names of the VLANS MUST match exactly 
-•	Create all LOCAL Self_IP address and associate them with the correct VLAN, respectively for each NEW unit based on the unit theu will be replacing in the Existing HA Cluster 
-o	These are the LOCAL Self IP Addresses NOT Floating Self_IP’s
-o	Floating Self_IP’s will be addressed when the units are configsynced 
-•	Add all necessary routes as configured in BIG-IP-01 & BIG-IP-02
-•	Set the ConfigSync and Failover IP addresses for each NEW unit respectively based on the target they will be replacing.
-•	Once the tasks above are complete, change the status of each NEW unit to “FORCED OFFLINE” in preparation of upgrade/replacement tasks 
-BIG-IP Migration Steps
-It is recommended that ALL the following steps occur in a Change Control window.  While these steps are written to minimize any impact, unforeseen circumstances can arise.
-Again, before engaging in any steps below ensure all General & New BIG-IP Pre-installation/Configuration Requirements and Tasks are complete; particularly the UCS archives or the existing HA cluster units.
-Stage 1 (Remove BIG-IP-02 [STANDBY])
-This will result in BIG-IP-01 being the ONLY ACTIVE unit for production traffic and while there is no HA, will be a single point of failure.
-•	[ON BIG-IP-02] Starting with the STANDBY unit BIG-IP-02 – changed its status to “FORCED OFFLINE”
-•	[ON BIG-IP-02] Remove BIG-IP-02 from the HA GROUP and click “Finished”
-•	[ON BIG-IP-02] Remove BIG-IP-01 from BIG-IP-02’s Peer trust list 
-•	[ON BIG-IP-01] Verify BIG-IP-02 has been removed from the HA Group (remove if not)
-•	[ON BIG-IP-01] Verify BIG-IP-02 is no longer a trusted peer (remove if not)
-•	[ON BIG-IP-01] Verify BIG-IP-01 is in STANDALONE mode and is actively/correctly passing traffic.
-•	[ON BIG-IP-02] Un-cable and remove BIG-IP-02 from rack.  Alternatively, switch interfaces can be shut if other rack and cabling have been arranged. 
-Stage 2 (Install NEW-BIG-IP-02 [FORCED OFFLINE])
-This will stage NEW-BIG-IP-02 for insertion into the HA Cluster of which BIG-IP-01 is a single member.  
-NOTE: NEW-BIG-IP-02 MUST be in FORCED OFFLINE mode prior to the steps below (see NEW BIG-IP Pre-Installation/Configuration Requirements & Tasks)
-•	[ON NEW-BIG-IP-02] Rack and connect all interfaces
-•	[ON NEW-BIG-IP-02] Verify Management IP access 
-•	[ON NEW-BIG-IP-02] Verify each LOCAL Self_IP address is accessible 
-•	[ON NEW-BIG-IP-02] Verify the Configsync and Failover configurations 
-Stage 3 (Add NEW-BIG-IP-02 [FORCED OFFLINE] to HA Cluster) 
-This will insert NEW-BIG-IP-02 into the HA Cluster of which BIG-IP-01 is a single member.  
-NOTE: NEW-BIG-IP-02 MUST be in FORCED OFFLINE mode prior to the steps below (see NEW BIG-IP Pre-Installation/Configuration Requirements & Tasks)
-•	[ON BIG-IP-01] Add NEW-BIG-IP-02 as a trusted Peer
-•	[ON BIG-IP-01] Add NEW-BIG-IP-02 to the HA Group 
-•	[ON BIG-IP-01] Verify BIG-IP-01 is ACTIVE  
-•	[ON NEW-BIG-IP-02] Verify the NEW-BIG-IP-02 is STANBY and FORCED OFFLINE 
-•	[ON BIG-IP-01] !!VERY IMPORTANT!! Synchronize the configuration FROM BIG-IP-01 TO NEW-BIG-IP-02   
-•	[ON NEW-BIG-IP-02] Verify the configuration has sync to NEW-BIG-IP-02.  Note objects will be “down” due to FORCED OFFLINE status.
-o	All Virtual, Pools iRules etc
-o	All certificates (Client SSL/Server SSL)
-o	All Floating Self_IPs
-•	[ON NEW-BIG-IP-02] Release from “FORCED OFFLINE” and verify “STANDBY” status
-•	[ON BIG-IP-01] Verify BIG-IP-01 is ACTIVE  
-•	[ON NEW-BIG-IP-02] Verify health of all Virtual Servers, Pools, Pool Members and Nodes
-Stage 4 (Failover HA Cluster to NEW-BIG-IP-02) 
-This will make NEW-BIG-IP-02 the ACTIVE member of the HA Cluster.  
-NOTE: NEW-BIG-IP-02 MUST be in STANDBY mode prior to the steps below and fully operational.
-•	[ON BIG-IP-01] Force BIG-IP-01 to STANDBY 
-•	[ON NEW-BIG-IP-02] Verify the NEW-BIG-IP-02 is ACTIVE and correctly functioning and passing traffic
-•	[ON NEW-BIG-IP-02] Verify all necessary application on the NEW-BIG-IP-02. Allocate sufficient time to testing application prior to proceeding to Stage 5 
-Stage 5 (Remove BIG-IP-01 [STANDBY(Fomerly ACTIVE)])
-This will result in NEW-BIG-IP-02 being the ONLY ACTIVE unit for production traffic and while there is no HA, will be a single point of failure.
-•	[ON BIG-IP-01] Starting with the STANDBY unit BIG-IP-01 – change its status to “FORCED OFFLINE”
-•	[ON BIG-IP-01] Remove BIG-IP-01 from the HA GROUP and click “Finished”
-•	[ON BIG-IP-01] Remove NEW-BIG-IP-02 from BIG-IP-01’s Peer trust list 
-•	[ON NEW-BIG-IP-02] Verify BIG-IP-01 has been removed from the HA Group (remove if not)
-•	[ON NEW-BIG-IP-02] Verify BIG-IP-01 is no longer a trusted peer (remove if not)
-•	[ON NEW-BIG-IP-02] Verify NEW-BIG-IP-02 is in STANDALONE mode and is actively/correctly passing traffic.
-•	[ON BIG-IP-01] Un-cable and remove BIG-IP-01 from rack.  Alternatively, switch interfaces can be shut if other rack and cabling have been arranged. 
-Stage 6 (Install NEW-BIG-IP-01 [FORCED OFFLINE])
-This will stage NEW-BIG-IP-01 for insertion into the HA Cluster of which NEW-BIG-IP-02 is a single member.  
-NOTE: NEW-BIG-IP-01 MUST be in FORCED OFFLINE mode prior to the steps below (see NEW BIG-IP Pre-Installation/Configuration Requirements & Tasks)
-•	[ON NEW-BIG-IP-01] Rack and connect all interfaces
-•	[ON NEW-BIG-IP-01] Verify Management IP access 
-•	[ON NEW-BIG-IP-01] Verify each LOCAL Self_IP address is accessible 
-•	[ON NEW-BIG-IP-01] Verify the Configsync and Failover configurations 
-Stage 7 (Add NEW-BIG-IP-01 [FORCED OFFLINE] to HA Cluster) 
-This will insert NEW-BIG-IP-01 into the HA Cluster of which NEW-BIG-IP-02 is a single member.  
-NOTE: NEW-BIG-IP-01 MUST be in FORCED OFFLINE mode prior to the steps below (see NEW BIG-IP Pre-Installation/Configuration Requirements & Tasks)
-•	[ON NEW-BIG-IP-02] Add NEW-BIG-IP-01 as a trusted Peer
-•	[ON NEW-BIG-IP-02] Add NEW-BIG-IP-01 to the HA Group 
-•	[ON NEW-BIG-IP-02] Verify NEW-BIG-IP-02 is ACTIVE  
-•	[ON NEW-BIG-IP-01] Verify the NEW-BIG-IP-01 is STANBY and FORCED OFFLINE 
-•	[ON NEW-BIG-IP-02] !!VERY IMPORTANT!! Synchronize the configuration FROM NEW-BIG-IP-02 TO NEW-BIG-IP-01   
-•	[ON NEW-BIG-IP-01] Verify the configuration has sync to NEW-BIG-IP-01.  Note objects will be “down” due to FORCED OFFLINE status.
-o	All Virtual, Pools iRules etc
-o	All certificates (Client SSL/Server SSL)
-o	All Floating Self_IPs
-•	[ON NEW-BIG-IP-01] Release from “FORCED OFFLINE” and verify “STANDBY” status
-•	[ON NEW-BIG-IP-02] Verify NEW-BIG-IP-02 is ACTIVE  
-•	[ON NEW-BIG-IP-01] Verify health of all Virtual Servers, Pools, Pool Members and Nodes
-Stage 8 (Failover HA Cluster to NEW-BIG-IP-01) 
-This will make NEW-BIG-IP-01 the ACTIVE member of the HA Cluster.  
-NOTE: NEW-BIG-IP-01 MUST be in STANDBY mode prior to the steps below and fully operational.
-•	[ON NEW-BIG-IP-02] Force NEW-BIG-IP-02 to STANDBY 
-•	[ON NEW-BIG-IP-01] Verify the NEW-BIG-IP-01 is ACTIVE and correctly functioning and passing traffic
-•	[ON NEW-BIG-IP-01] Verify all necessary application on the NEW-BIG-IP-01. Allocate enough time to testing application prior to completing change.
+BIG-IP PRE-Upgrade Steps
+The following steps can occur prior to a Change Control window.  While these steps are written to minimize any impact, unforeseen circumstances can arise. In very risk averse environments, steps 5 & 6 can be completed inside the Change Control Window.
+STEP 1: [PRE-UPGRADE]
+Verify that both units are “In Sync”	 
+STEP 2: [PRE-UPGRADE]
+Take screen shots of current activity ON BOTH UNITS in order to compare post upgrade. (i.e. which sites/services are up, take snapshots of Network Map, Virtual Servers, Pools etc ..)	 
+STEP 3: [PRE-UPGRADE]
+Create UCS archives (System >> Archives) ON BOTH UNITS. This does not impact functionality of BIG-IP.	 
+STEP 4: [PRE-UPGRADE]
+Download UCS files to local machine (or file share) from BOTH UNITS.	 
+STEP 5: [OPTIONAL PRE-UPGRADE]
+Under System >> Software Management >> Image list, IMPORT the targeted TMOS version you intended to upgrade to. This should be performed ON BOTH UNITS.
+
+Note: This does not affect functionality or Production services.
+
+Note: Current TMOS releases can be obtained from https://downloads.f5.com
+Check with your Local Account Manager & System Engineer for recommended code releasees.
+
+Note: Verify available disk space and remove any unneeded or unused images.  DO NOT delete images that currently support available installations.	  
+STEP 6: [OPTIONAL PRE-UPGRADE]
+Under System >> Software Management >> Image list, INSTALL the targeted TMOS version into an available or new boot location.  Perform this task ON BOTH UNITS.
+
+Note: This does not affect functionality or Production services.
+
+Note: To target or create a specific Installation location, inputting a Volume Set Name value (numeric) can be done.	 
+  
+
+BIG-IP Upgrade Steps 
+The following steps MUST (should for more the more risk embracing) occur in a Change Control window.  Specific impacts will be noted when potential service interruptions may or will occur. Be sure to following instructions on the NOTED unit
+STEP 7: [BOTH UNITS]
+Verify BOTH units are in “Sync”	 
+STEP 8: [STANDBY UNIT ONLY: BIG-IP-02]
+On the STANDBY unit, Re-Activate license.
+System >> License.
+
+This will result ~50 seconds of daemons restarting.  Since this is currently the STNADBY unit it should not impact production traffic but will affect access to the STANBY Unit 
+
+Note License Reactivation can be automatically or manually and depends (respectively) whether your BIG-IP’s management IP address has internet access or not.	  
+STEP 9: [STANDBY UNIT ONLY: BIG-IP-02]
+On the STANDBY unit, Activate the NEW Boot Location.  System >> Software Management >> Boot Location.
+
+Install Configuration: Yes 
+Source Volume: Is your currently active volume.
+
+This will result ~8-10 minutes (or more) of system reboot time.  Since this is currently the STNADBY unit it should not impact production traffic but will affect access to the STANBY Unit 
+	  
+
+STEP 9: [STANDBY UNIT ONLY: BIG-IP-02]
+On the STANDBY unit, when rebooted should show ONLINE (STANDBY) but will show DISCONNECTED.
+
+HA will still be intact, but you will NOT be able to sync changes during this upgrade process.
+	 
+STEP 10: [STANDBY UNIT ONLY: BIG-IP-02]
+Validate system status by reviewing logs and comparing status of various screen shots taken in Step 2
+	 
+STEP 11: [ACTIVE UNIT ONLY: BIG-IP-01]
+On the ACTIVE unit, Force the ACTIVE unit to STANBY.  Device Management >> Traffic Groups >> traffic-group-1 
+
+Note: This presumes a single traffic group is configured (DEFAULT).
+
+NOTE: THIS WILL RESULT IN A FAILOVER OF THE ACTIVE UNIT.  Anticipated failover time is sub one (1) second (GARP advertisement)	 
+STEP 11: [NEW-ACTIVE UNIT ONLY: BIG-IP-02], (former STANDBY), Verify functionality: TEST, TEST, TEST!!!!
+Once & ONLY IF all verifications are complete in STEP 11 … proceed to STEP 12
+STEP 12: [NEW-STANDBY UNIT ONLY: BIG-IP-01], (former ACTIVE), Repeat steps 8 to 11 
+STEP 13: [NEW-ACTIVE UNIT ONLY: BIG-IP-02]
+On the NEW-ACTIVE unit, Force the NEW-ACTIVE unit to STANBY.  Device Management >> Traffic Groups >> traffic-group-1 
+
+Note: This presumes a single traffic group is configured (DEFAULT).
+
+NOTE: THIS WILL RESULT IN A FAILOVER OF THE NEW-ACTIVE UNIT.  Anticipated failover time is sub one (1) second (GARP advertisement)	 
+STEP 14: [NEW-ACTIVE UNIT ONLY: BIG-IP-01], (former STANDBY), Verify functionality – TEST, TEST, TEST!!!
+Once & ONLY IF all verifications are complete in STEP 14 … proceed to STEP 15
+STEP 15: [NEW-ACTIVE UNIT ONLY: BIG-IP-01]
+Resync Configuration from ACTIVE:BIG-IP-01 to STANDBY BIG-IP-02	 
+STEP 16: [BOTH UNITS]
+Create UCS archives (System >> Archives) ON BOTH UNITS. This does not impact functionality of BIG-IP.	 
+STEP 17: [BOTH UNITS]
+Download UCS files to local machine (or file share) from BOTH UNITS.	 
+STEP 18: Complete
+
 Conclusion
-This process is intended to provide a general guideline to assist in migrating ACTIVE configurations to new hardware in a seamless as possible manner.  Actual steps may very depending on customer environment. 
+This process is intended to provide a general guideline to assist in upgrading BIG-IP systems configurations to new software versions in a seamless as possible manner.  Actual steps may vary depending on customer environment. 
 
