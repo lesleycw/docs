@@ -163,7 +163,7 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 | * Create WAF: Create application firewall object and configure the application settings.     |
 |                                                                                              |
-| * Attach WWAF to Virtual Host.                                                               |
+| * Attach WAF to Virtual Host.                                                                |
 +----------------------------------------------------------------------------------------------+
 | |image008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -289,6 +289,15 @@ TASK: 4: Attacking & Adjusting WAF Configuration
 | |image018|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 6. In the **Disabled Detections* section, clear the **RCE Attack** by clicking the **X**     |
+|                                                                                              |
+|    to clear the **Detections Tag** field.                                                    |
+|                                                                                              |
+| 8. Click the **Save and Exit** button.                                                       |
++----------------------------------------------------------------------------------------------+
+| |image011|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
 TASK 14: End of Lab1
 ~~~~~~~~~~~~~~~~~~~~
