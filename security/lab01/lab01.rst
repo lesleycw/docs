@@ -217,7 +217,7 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |    **Note**: that when creating the **App Firewall** first (second step in configuration     |
 |                                                                                              |
-|     workflow), that a *generated* **App Firewall Rules** is automatically created.           |
+|    workflow), that a *generated* **App Firewall Rules** is automatically created.            |
 |                                                                                              |
 | 10. Click the three dots **...** on the far right of the identified row.                     |
 |                                                                                              |
