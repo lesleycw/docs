@@ -159,7 +159,7 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 | * Create WAF Rule: Create WAF rules object in your namespace. This object contains rules     |
 |                                                                                              |
-|                    selected from the Core Rules Set (CRS) and Volterra Rules Set (VRS).      |    
+|   selected from the Core Rules Set (CRS) and Volterra Rules Set (VRS).                       |    
 |                                                                                              |
 | * Create WAF: Create application firewall object and configure the application settings.     |
 |                                                                                              |
