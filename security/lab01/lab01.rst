@@ -109,8 +109,6 @@ TASK 3: Volt Console (General Navigation)
 | 2. **Log In** > **Teams or Organization Plans** (This is specfic to region) > **Next**       |
 |                                                                                              |
 | 3. **Log in with Azure** (You must have completed your account onboarding process.**         |
-|                                                                                              |
-| ..NOTE:: Logging on as **Tenant Owner** provides tenant-wide administration priviledges.     |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
 |                                                                                              |
@@ -118,6 +116,7 @@ TASK 3: Volt Console (General Navigation)
 |                                                                                              |
 | |image003|                                                                                   |
 +----------------------------------------------------------------------------------------------+
+..NOTE:: Logging on as **Tenant Owner** provides tenant-wide administration priviledges.   
 
 +----------------------------------------------------------------------------------------------+
 | 4. Review the **Volt Console** as presented.                                                 |
