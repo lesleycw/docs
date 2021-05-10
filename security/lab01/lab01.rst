@@ -46,9 +46,9 @@ There are two types of rules for each waf-object that are supported by the syste
 
 :**Implicit**: User provides a list of technologies. For example, programming languages used,
                content management systems used, types of servers, etc that are used by the 
-               endpoints (or services) for a given virtual-host. Volterra has an algorithmic
-			   engine that will use this information to automatically figure out rules to
-			   include and exclude from both the rule set.
+               endpoints (or services) for a given virtual-host. Volterra has an algorithmic 
+               engine that will use this information to automatically figure out rules to 
+               include and exclude from both the rule set.
 			  
 :**Explicit**: User can explicitly configure rules to exclude from the Rule engine.
 
