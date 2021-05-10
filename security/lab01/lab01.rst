@@ -74,19 +74,19 @@ The user can configure a **Web Application Firewall** per **virtual host** by at
 
 :**WAF-Rules object**: Is a mechanism for advanced users and is described earlier as the explicit 
                        mode. One can select rules in core-rule-set or volterra-rule-set to be 
-                       enabled/disabled by configuring the waf-rules-object appropriately: 
-                       - Whether a rule is blocking or alerting
-					   - Rules hit thresholds
-					   - Exclude or include list of rule id(s)
+                       enabled/disabled by configuring the waf-rules-object appropriately:
+- Whether a rule is blocking or alerting
+- Rules hit thresholds
+- Exclude or include list of rule id(s)
 
 The built-in rules processor takes the WAF object and automatically creates a WAF-rules object that 
 contains the detailed configuration information that can be used by the WAF. The processing engine
 works on the basis of the following information:
 
-- **Application Profile:** Defines the technologies used to build the app - Programming languages used,
-                        content management systems used, types of servers, etc.
-- **Types of attacks to detect:** Defines the types of attacks that need to be detected and prevented
-                        (SQL injection, XSS, Protocol, etc.)
+:**Application Profile**: Defines the technologies used to build the app - Programming languages used,
+                          content management systems used, types of servers, etc.
+**Types of Attacks to Detect**: Defines the types of attacks that need to be detected and prevented
+                                (SQL injection, XSS, Protocol, etc.)
 
 Automatically generated WAF-rules object cannot be modified by users and this object is owned by the 
 system. However the user can always copy this auto-generated WAF-rules object and further tune it.
