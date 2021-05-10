@@ -179,11 +179,11 @@ TASK 2: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Select the **Security** > **App Firewalls** from left navigation then select *App**       |
+| 4. Select the **Security** > **App Firewall** from left navigation then select *App**        |
 |                                                                                              |
 |    **Firewalls** from the flyout menu.                                                       |
 |                                                                                              |
-| 5. Click **Add Firewall** in the right updated panel.                                        |
+| 5. Click **Add Firewall** in the right-side, updated panel.                                  |
 +----------------------------------------------------------------------------------------------+
 | |image010|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -203,12 +203,43 @@ TASK 2: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. Select the **Security** > **App Firewalls** from left navigation then select *App**       |
+| 8. Select the **Security** > **App Firewall** from left navigation then select **App**       |
 |                                                                                              |
-|    **Firewalls** from the flyout menu.                                                       |
+|    **Firewall Rules** from the flyout menu.                                                  |
 +----------------------------------------------------------------------------------------------+
 | |image012|                                                                                   |
 +----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. Find the genrated **App Firewall Rules** that matches the create App Firewall above.      |
+|                                                                                              |
+|    This will be in the format *generated-waf-<app firewall name>* from step 6 above.         |
+|                                                                                              |
+|    **Note**: that when creating the **App Firewall** first (second step in configuration     |
+|                                                                                              |
+|     workflow), that a *generated* **App Firewall Rules** is automatically created.           |
+|                                                                                              |
+| 10. Click the three dots **...** on the far right of the identified row.                     |
+|                                                                                              |
+| 11. Click **Edit** in the resulting pop-up window.                                           |
++----------------------------------------------------------------------------------------------+
+| |image013|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 12. Review the generated **App Firewall Rules** and the various sections.                    |
+|                                                                                              |
+|     These can be adjusted to accomodate the specfifc security needs.                         |
+|                                                                                              |
+| 13. Click the horizontal navigation's **JSON** tab to view the API ready, JSON format.       |
++----------------------------------------------------------------------------------------------+
+| |image014|                                                                                   |
+|                                                                                              |
+| |image015|                                                                                   |
+|                                                                                              |
+| |image016|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
 
 TASK: 3: Switching Namespace 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
