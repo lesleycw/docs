@@ -105,6 +105,12 @@ TASK 3: Volt Console (General Navigation)
 
 +----------------------------------------------------------------------------------------------+
 | 1. Login to the Volterra Console: **https://www.volterra.io** and complete authentication.   |
+|                                                                                              |
+| 2. **Log In** > **Teams or Organization Plans** (This is specfic to region) > **Next**       |
+|                                                                                              |
+| 3. **Log in with Azure** (You must have completed your account onboarding process.**         |
+|                                                                                              |
+| ..NOTE:: Logging on as **Tenant Owner** provides tenant-wide administration priviledges.     |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
 |                                                                                              |
@@ -114,9 +120,9 @@ TASK 3: Volt Console (General Navigation)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. Review the **Volt Console** as presented.                                                 |
+| 4. Review the **Volt Console** as presented.                                                 |
 |                                                                                              |
-| 3. This is the **default** view.  It is the **App View** and is more centric to *Netops*     |
+| 5. This is the **default** view.  It is the **App View** and is more centric to *Netops*     |
 |                                                                                              |
 |    *Personas*.                                                                               |
 +----------------------------------------------------------------------------------------------+
@@ -124,7 +130,7 @@ TASK 3: Volt Console (General Navigation)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. This is the **Shared View** and is more centric to *Secops Personas* and is where the     |
+| 6. This is the **Shared View** and is more centric to *Secops Personas* and is where the     |
 |                                                                                              |
 |    bulf of all application security configurations will be made.                             |
 +----------------------------------------------------------------------------------------------+
@@ -132,13 +138,13 @@ TASK 3: Volt Console (General Navigation)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. This is the **System View** and is more centric to *Devops Personas*.                     |
+| 7. This is the **System View** and is more centric to *Devops Personas*.                     |
 +----------------------------------------------------------------------------------------------+
 | |image006|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. This is the **General View** and is specific to Profile and Tenant operations.            |
+| 8. This is the **General View** and is specific to Profile and Tenant operations.            |
 +----------------------------------------------------------------------------------------------+
 | |image007|                                                                                   |
 +----------------------------------------------------------------------------------------------+
