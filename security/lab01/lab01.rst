@@ -56,27 +56,28 @@ In addition to configuring the rules, the decision needs to be made on whether t
 attacks or just generate an alert and let the security or application experts decide what
 actions to take:
 
-- Monitoring mode: This will generate an alert on a security event. No attack is 
-                   blocked in this mode.
-- Blocking Mode:   This will configure the WAF to be Inline-mode and deny client requests 
-                   that match certain rules.
+:**Monitoring mode**: This will generate an alert on a security event. No attack is 
+                      blocked in this mode.
+:**Blocking Mode**: This will configure the WAF to be Inline-mode and deny client requests 
+                    that match certain rules.
 
 TASK 2: Quick Intro - Configuring Rules-based WAFs (Concept Review)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The user can configure a **Web Application Firewall** per **virtual host** by attaching **WAF**
 **object** or **WAF-rules object** to a **virtual-host** object:
 
-**WAF object** is a mechanism to make users life easy and is described earlier as the implicit
-mode. 	The idea is that instead of enabling all the rules or typing individual rules, the
-user can just define the type of technologies used by their applications and types of attacks
-that need to be detected and the system will decide what needs to be done.
+:**WAF object**: Is a mechanism to make users life easy and is described earlier as the implicit 
+                 mode. The idea is that instead of enabling all the rules or typing individual 
+                 rules, the user can just define the type of technologies used by their 
+                 applications and types of attacks that need to be detected and the system will 
+                 decide what needs to be done.
 
-**WAF-Rules object** is a mechanism for advanced users and is described earlier as the explicit
-mode. One can select rules in core-rule-set or volterra-rule-set to be enabled/disabled by 
-configuring the waf-rules-object appropriately:
-- Whether a rule is blocking or alerting
-- Rules hit thresholds
-- Exclude or include list of rule id(s)
+:**WAF-Rules object**: Is a mechanism for advanced users and is described earlier as the explicit 
+                       mode. One can select rules in core-rule-set or volterra-rule-set to be 
+                       enabled/disabled by configuring the waf-rules-object appropriately: 
+                       - Whether a rule is blocking or alerting
+					   - Rules hit thresholds
+					   - Exclude or include list of rule id(s)
 
 The built-in rules processor takes the WAF object and automatically creates a WAF-rules object that 
 contains the detailed configuration information that can be used by the WAF. The processing engine
