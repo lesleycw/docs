@@ -2,119 +2,24 @@ Lab 1: Volterra Application Firewall Deployment
 ===============================================
 
 The purpose of this lab is to extend the participant's ability to naviagte the 
-Volterra console and assign an Application Firewall, Rule-based WAF configurations. 
-This entry-level security configuration is part of Volterra's current multi-layer 
-security approach which leverages a Rule-Based WAF, a Behavioural Firewall and a 
-of leve rage Access Guided Configuration (AGC) to 
-deploy an Identity Aware Proxy extended by Per Request Policies (PRP) access 
-controls. The Per Request Policies will restrict access based on AD Group 
-Membership and the URI accessed. Students will configure the various aspects 
-of the application using strictly AGC, review the configuration and perform 
-tests of the deployment.
+Volterra console and assign an Application Firewall via Rule-based WAF configurations. 
+This an entry-level security configuration which is part of Volterra's current multi-layer 
+security approach.   
 
-
-The 
-Application Security is a complex topic and needs a multi-layer approach to solving the problem.
-There are many technologies needed to comprehensively secure an application and we provide a set
-of tools that are expected from an application infrastructure platform. These tools use a
-combination of traditional static signature-based techniques, statistical algorithms, and more
-dynamic machine learning approaches to solve the problem of application protection. These set of
-tools are represented by three capabilities in the system:
-
-1. Rules-based WAFs - This is a rule based approach and is based on a combination of OWASP core
-   rule set (CRS) and volterra rules set (VRS). It is event-based and provides protection from a
-   range of attacks on HTTP traffic with ability to monitor and log every event. This solution
-   can be used in both alerting and blocking mode.
-   
-2. Behavioral Analysis - System performs machine learning to understand the behavior of clients
-   and server based on logs and metrics collected by monitoring system in a service mesh. It
-   generates alarms when it detects anomalies in the behavior.
-
-3. Application DOS Protection - While our global infrastructure and backbone has built-in
-   capability to protect against volumetric DDoS attacks, there is a growing need for more
-   complex application level attacks and BOTs. This can be prevented using a combination of 
-   rules-based WAF, behavioral analysis, and Fast ACLs from the Network Firewall section.
-
-Rules-based WAFs
-
-The rules engine is the centerpiece of the WAFs approach to application security and decision of
-what rules to configure assumes a high degree of knowledge of the rules. If for some reason, a
-needed rule is excluded then the application will be vulnerable. If unwanted rules are added,
-then it adds extra processing per request and this adds to latency. To solve this problem of
-rules knowledge and make it extremely easy to configure, we created a rules processing engine
-that automates the inclusion and exclusion of rules.
-
-There are two types of rules for each waf-object that are supported by the system - core-rule-set
-and volterra-rule-set. There are two ways the rules can be enabled:
-
-   Implicit - User provides a list of technologies (for example, programming languages used, 
-              content management systems used, types of servers, etc) that are used by the 
-			  endpoints (or services) for a given virtual-host. Volterra has an algorithmic 
-			  engine that will use this information to automatically figure out rules to include 
-			  and exclude from both the rule set.
-			  
-   Explicit - User can explicitly configure rules to exclude from the Rule engine.
-
-In addition to configuring the rules, the decision needs to be made on whether to block the 
-attacks or just generate an alert and let the security or application experts decide what actions
-to take:
-
-   Monitoring mode - This will generate an alert on a security event. No attack is 
-                     blocked in this mode.
-   Blocking Mode - This will configure the WAF to be Inline-mode and deny client requests 
-                   that match certain rules.
-
-Configuring Rules-based WAFs
-
-The user can configure a web application firewall per virtual host by attaching waf object or 
-waf-rules object to a virtual-host object:
-
-    Waf object is a mechanism to make users life easy and is described earlier as the implicit mode. 
-	The idea is that instead of enabling all the rules or typing individual rules, the user can just
-	define the type of technologies used by their applications and types of attacks that need to be
-	detected and the system will decide what needs to be done.
-
-    Waf-rules object - is a mechanism for advanced users and is described earlier as the explicit
-	mode. One can select rules in core-rule-set or volterra-rule-set to be enabled/disabled by 
-	configuring the waf-rules-object appropriately:
-        Whether a rule is blocking or alerting
-        Rules hit thresholds
-        Exclude or include list of rule id(s)
-
-Built-in rules processor takes the waf object and automatically creates a waf-rules object that 
-contains the detailed configuration information that can be used by the WAF. The processing engine
-works on the basis of the following information:
-
-    Application Profile - Defines the technologies used to build the app - Programming languages used,
-                          content management systems used, types of servers, etc.
-    Types of attacks to detect - Defines the types of attacks that need to be detected and prevented
-                                 (SQL injection, XSS, Protocol, etc.)
-
-Automatically generated waf-rules object cannot be modified by users and this object is owned by the 
-system. However the user can always copy this auto-generated waf-rules object and further tune it.
-
-Individual waf-objects or waf-rule-objects can be shared by multiple virtual hosts within a namespace. 
-In addition, these objects can also be attached to virtual host or per route basis. Since waf objects 
-can be shared with multiple virtual hosts and multiple wafs can be configured to given virtual-host by 
-way of routes, monitoring is not based on these WAF objects. All monitoring for a waf is done on a per 
-virtual-host to provide insights into application.
-
-Details on all the parameters and how they can be configured for this object is covered in the API 
-Specification under Waf object or waf-rules object
-
-
-
-
-
+Volterr'a current multi-layer security approach leverages both a **Rule-Based WAF** and a 
+**Behavioural Firewall**. This can be further exteneded through using a combination of 
+the Rules-Based WAF, Behavioral Analysis(Behavioral Firewall), and **Fast ACLs** from the
+Network Firewall section to enable **Application DOS Protection**. These additional topics
+will be addressed in specific labs.  
 
 Objective:
 ----------
 
--  Gain an understanding of Access Guided Configurations and
-   its various configurations and deployment models
+-  Gain an navigational understanding of Volterra Console and its key menus
 
--  Gain an initial understanding of Per Request Policies and their applicability
-   in various delivery and control scenarios
+-  Gain an initial understanding of Volterra's Application Firewall - Rule-Based WAF configuration
+
+-  Deploy and verfiy security configuration within Volt Console 
 
 Lab Requirements:
 -----------------
@@ -126,7 +31,75 @@ Lab Requirements:
 Lab 1 Tasks:
 -----------------
 
-TASK 1: Intialize Access Guided Configuration (AGC)
+TASK 1: Quick Intro - Rules-based WAFs (Concept Review)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The rules engine (currently based-on ModSec) is the centerpiece of Volterra's WAFs approach
+to application security and decision of what rules to configure assumes a high degree of
+knowledge of the rules. If for some reason, a needed rule is excluded then the application
+will be vulnerable. If unwanted rules are added, then it adds extra processing per request 
+and this adds to latency. To solve this problem of rules knowledge and make it extremely easy
+to configure, we created a rules processing engine that automates the inclusion and exclusion
+of rules.
+
+There are two types of rules for each waf-object that are supported by the system 
+**core-rule-set** and a **volterra-rule-set**. There are two ways the rules can be enabled:
+
+   Implicit - User provides a list of technologies (for example, programming languages used, 
+              content management systems used, types of servers, etc) that are used by the 
+			  endpoints (or services) for a given virtual-host. Volterra has an algorithmic 
+			  engine that will use this information to automatically figure out rules to include 
+			  and exclude from both the rule set.
+			  
+   Explicit - User can explicitly configure rules to exclude from the Rule engine.
+
+In addition to configuring the rules, the decision needs to be made on whether to block the 
+attacks or just generate an alert and let the security or application experts decide what
+actions to take:
+
+   Monitoring mode - This will generate an alert on a security event. No attack is 
+                     blocked in this mode.
+   Blocking Mode - This will configure the WAF to be Inline-mode and deny client requests 
+                   that match certain rules.
+
+TASK 2: Quick Intro - Configuring Rules-based WAFs (Concept Review)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The user can configure a **Web Application Firewall** per **virtual host** by attaching **WAF**
+**object** or **WAF-rules object** to a **virtual-host** object:
+
+**WAF object** is a mechanism to make users life easy and is described earlier as the implicit
+mode. 	The idea is that instead of enabling all the rules or typing individual rules, the
+user can just define the type of technologies used by their applications and types of attacks
+that need to be detected and the system will decide what needs to be done.
+
+**WAF-Rules object** is a mechanism for advanced users and is described earlier as the explicit
+mode. One can select rules in core-rule-set or volterra-rule-set to be enabled/disabled by 
+configuring the waf-rules-object appropriately:
+- Whether a rule is blocking or alerting
+- Rules hit thresholds
+- Exclude or include list of rule id(s)
+
+The built-in rules processor takes the WAF object and automatically creates a WAF-rules object that 
+contains the detailed configuration information that can be used by the WAF. The processing engine
+works on the basis of the following information:
+
+- **Application Profile:** Defines the technologies used to build the app - Programming languages used,
+                        content management systems used, types of servers, etc.
+- **Types of attacks to detect:** Defines the types of attacks that need to be detected and prevented
+                        (SQL injection, XSS, Protocol, etc.)
+
+Automatically generated WAF-rules object cannot be modified by users and this object is owned by the 
+system. However the user can always copy this auto-generated WAF-rules object and further tune it.
+
+Individual WAF or WAF-Rules objects can be shared by multiple virtual hosts within a namespace. In 
+addition, these objects can also be attached to virtual host or per route basis. Since WAF objects 
+can be shared with multiple virtual hosts and multiple wafs can be configured to given virtual-host by 
+way of routes, monitoring is not based on these WAF objects. All monitoring for a WAF is done on a per 
+virtual-host to provide insights into application.
+
+Details on all the parameters and how they can be configured for this object is covered in the API 
+Specification under WAF object or WAF-Rules object
+
+TASK 3: Intialize Access Guided Configuration (AGC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
