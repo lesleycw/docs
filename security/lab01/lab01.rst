@@ -100,33 +100,47 @@ virtual-host to provide insights into application.
 Details on all the parameters and how they can be configured for this object is covered in the API 
 Specification under WAF object or WAF-Rules object
 
-TASK 3: Intialize Access Guided Configuration (AGC)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK 3: Volt Console (General Navigation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| 1. Login to your provided lab Virtual Edition: **bigp1.f5lab.local**                         |
-|                                                                                              |
-| 2. Navigate to:  **Access -> Guided Configuration**                                          |
-|                                                                                              |
-| 3. Click the **Zero Trust** graphic as shown.                                                |
-|                                                                                              |
-| 4. Click on the **Identity Aware Proxy**  dialogue box click under **Zero Trust**            |
-|                                                                                              |
-|    in the navigation as shown.                                                               |
+| 1. Login to the Volterra Console: **https://www.volterra.io** and complete authentication.   |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 5. Review the **Identity Aware Proxy Application** configuration example presented.          |
 |                                                                                              |
-| 6. Scroll through and review the remaining element of the dialogue box to the bottom of the  |
-|                                                                                              |
-|    screen and click **Next**.                                                                |
-+----------------------------------------------------------------------------------------------+
 | |image002|                                                                                   |
 |                                                                                              |
 | |image003|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. Review the **Volt Console** as presented.                                                 |
+|                                                                                              |
+| 3. This is the **default** view.  It is the **App View** and is more centric to *Netops*     |
+|                                                                                              |
+|    *Personas*.                                                                               |
++----------------------------------------------------------------------------------------------+
+| |image004|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. This is the **Shared View** and is more centric to *Secops Personas* and is where the     |
+|                                                                                              |
+|    bulf of all application security configurations will be made.                             |
++----------------------------------------------------------------------------------------------+
+| |image005|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 5. This is the **System View** and is more centric to *Devops Personas*.                     |
++----------------------------------------------------------------------------------------------+
+| |image006|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 6. This is the **General View** and is specific to Profile and Tenant operations.            |
++----------------------------------------------------------------------------------------------+
+| |image007|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 TASK 2: Config Properties  
