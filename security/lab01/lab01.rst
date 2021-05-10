@@ -44,21 +44,21 @@ of rules.
 There are two types of rules for each waf-object that are supported by the system 
 **core-rule-set** and a **volterra-rule-set**. There are two ways the rules can be enabled:
 
-   Implicit - User provides a list of technologies (for example, programming languages used, 
-              content management systems used, types of servers, etc) that are used by the 
-			  endpoints (or services) for a given virtual-host. Volterra has an algorithmic 
-			  engine that will use this information to automatically figure out rules to include 
-			  and exclude from both the rule set.
+- Implicit: User provides a list of technologies (for example, programming languages used, 
+            content management systems used, types of servers, etc) that are used by the 
+			endpoints (or services) for a given virtual-host. Volterra has an algorithmic 
+			engine that will use this information to automatically figure out rules to include 
+			and exclude from both the rule set.
 			  
-   Explicit - User can explicitly configure rules to exclude from the Rule engine.
+- Explicit: User can explicitly configure rules to exclude from the Rule engine.
 
 In addition to configuring the rules, the decision needs to be made on whether to block the 
 attacks or just generate an alert and let the security or application experts decide what
 actions to take:
 
-   Monitoring mode - This will generate an alert on a security event. No attack is 
-                     blocked in this mode.
-   Blocking Mode - This will configure the WAF to be Inline-mode and deny client requests 
+- Monitoring mode: This will generate an alert on a security event. No attack is 
+                   blocked in this mode.
+- Blocking Mode:   This will configure the WAF to be Inline-mode and deny client requests 
                    that match certain rules.
 
 TASK 2: Quick Intro - Configuring Rules-based WAFs (Concept Review)
