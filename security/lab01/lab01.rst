@@ -149,15 +149,19 @@ TASK 3: Volt Console (General Navigation)
 | |image007|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK 2: Config Properties  
-~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK 2: Configuring Web Application Firewall  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the **Configuration Name** dialogue box, enter **agc-app.acme.com**.                   |
+| 1. The following image shows the configuration worflow for creating an appplication firewall |
 |                                                                                              |
-| 2. Toggle **Single Sign-On (SSO) & HTTP Header** to the **On** position.                     |
+|    which fundametally involves three key steps.                                              |
 |                                                                                              |
-| 3. Toggle **Application Groups** to the **On** position.                                     |
+| :**Implicit**: User provides a list of technologies. For example, programming languages      |
+|               content management systems used, types of servers, etc that are used by the    |
+|               endpoints (or services) for a given virtual-host. Volterra has an algorithmic  |
+|               engine that will use this information to automatically figure out rules to     |
+|               include and exclude from both the rule set.                                    |    
 |                                                                                              |
 | 4. Toggle **Webtop** to the **Off** position.                                                |
 |                                                                                              |
