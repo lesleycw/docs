@@ -197,13 +197,17 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |    **Mode**: Block (as we will be blocking traffic) Note: Alert is the other option here.    |
 |                                                                                              |
-| 7. Click the **Save and Exit** button.                                                       |
+| 7. In the **Disabled Detections* section, click in the *Detections Tag* input field and in   |
+|                                                                                              |
+|    resulting pop-up menu, select **RCE Attack**.                                             |
+|                                                                                              |
+| 8. Click the **Save and Exit** button.                                                       |
 +----------------------------------------------------------------------------------------------+
 | |image011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 8. Select the **Security** > **App Firewall** from left navigation then select **App**       |
+| 9. Select the **Security** > **App Firewall** from left navigation then select **App**       |
 |                                                                                              |
 |    **Firewall Rules** from the flyout menu.                                                  |
 +----------------------------------------------------------------------------------------------+
@@ -211,27 +215,27 @@ TASK 2: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. Find the genrated **App Firewall Rules** that matches the create App Firewall above.      |
+| 10. Find the genrated **App Firewall Rules** that matches the create App Firewall above.     |
 |                                                                                              |
-|    This will be in the format *generated-waf-<app firewall name>* from step 6 above.         |
+|     This will be in the format *generated-waf-<app firewall name>* from step 6 above.        |
 |                                                                                              |
-|    **Note**: that when creating the **App Firewall** first (second step in configuration     |
+|     **Note**: that when creating the **App Firewall** first (second step in configuration    |
 |                                                                                              |
-|    workflow), that a *generated* **App Firewall Rules** is automatically created.            |
+|     workflow), that a *generated* **App Firewall Rules** is automatically created.           |
 |                                                                                              |
-| 10. Click the three dots **...** on the far right of the identified row.                     |
+| 11. Click the three dots **...** on the far right of the identified row.                     |
 |                                                                                              |
-| 11. Click **Edit** in the resulting pop-up window.                                           |
+| 12. Click **Edit** in the resulting pop-up window.                                           |
 +----------------------------------------------------------------------------------------------+
 | |image013|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Review the generated **App Firewall Rules** and the various sections.                    |
+| 13. Review the generated **App Firewall Rules** and the various sections.                    |
 |                                                                                              |
 |     These can be adjusted to accomodate the specfifc security needs.                         |
 |                                                                                              |
-| 13. Click the horizontal navigation's **JSON** tab to view the API ready, JSON format.       |
+| 14. Click the horizontal navigation's **JSON** tab to view the API ready, JSON format.       |
 +----------------------------------------------------------------------------------------------+
 | |image014|                                                                                   |
 |                                                                                              |
@@ -240,10 +244,50 @@ TASK 2: Configuring Web Application Firewall
 | |image016|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
+TASK: 3: Attaching Web Application Firewall 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TASK: 3: Switching Namespace 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++----------------------------------------------------------------------------------------------+
+| **ALERT**: Placeholder - determine best/cheapest HTTP Load Balancer configuration.           |
++----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 9. Click on the **Security Configuration** item in the left navigation.                      |
+|                                                                                              |
+| 10. Toggle the **Show Advanced Fields** in the upper right corner of the updated window.     |
+|                                                                                              |
+| 11. In the **Select Web Application Firewall (WAF) Config** dropdown, select **Specify WAF** |
+|                                                                                              |
+|     **Intent**.                                                                              |
+| 12. In the **Specify WAF Intent** dropdown, select the created WAF Object in Task 2, Step 6. |
++----------------------------------------------------------------------------------------------+
+| |image017|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
+TASK: 4: Attacking & Adjusting WAF Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------------------------+
+| 1. Open your browser of choice, and browse to *sitename*                                     |
+|                                                                                              |
+| 2. Add the following to your query string to your URL and brwose again:                      |
+|                                                                                              |
+|    *?cmd=cat%20/etrc/passwd*                                                                 |
+|                                                                                              |
+| 3. What was the result?                                                                      |
++----------------------------------------------------------------------------------------------+
+| |image018|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. Select the **Security** > **App Firewall** from left navigation then select *App**        |
+|                                                                                              |
+|    **Firewalls** from the flyout menu.                                                       |
+|                                                                                              |
+| 5. Find the created WAF Object in Task 2, Step 6 and select the three dots on the same row.  |
++----------------------------------------------------------------------------------------------+
+| |image010|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
 
 TASK 14: End of Lab1
