@@ -157,17 +157,15 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |    which fundametally involves three key steps.                                              |
 |                                                                                              |
-| :**Implicit**: User provides a list of technologies. For example, programming languages      |
-|               content management systems used, types of servers, etc that are used by the    |
-|               endpoints (or services) for a given virtual-host. Volterra has an algorithmic  |
-|               engine that will use this information to automatically figure out rules to     |
-|               include and exclude from both the rule set.                                    |    
+| * Create WAF Rule: Create WAF rules object in your namespace. This object contains rules     |
 |                                                                                              |
-| 4. Toggle **Webtop** to the **Off** position.                                                |
+|                    selected from the Core Rules Set (CRS) and Volterra Rules Set (VRS).      |    
 |                                                                                              |
-| 5. Click **Save & Next** at the bottom of the dialogue window.                               |
+| * Create WAF: Create application firewall object and configure the application settings.     |
+|                                                                                              |
+| * Attach WWAF to Virtual Host.                                                               |
 +----------------------------------------------------------------------------------------------+
-| |image004|                                                                                   |
+| |image008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 TASK: 3: Configure Virtual Server Properties 
