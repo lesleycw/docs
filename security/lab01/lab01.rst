@@ -66,11 +66,11 @@ TASK 2: Quick Intro - Configuring Rules-based WAFs (Concept Review)
 The user can configure a **Web Application Firewall** per **virtual host** by attaching **WAF**
 **object** or **WAF-rules object** to a **virtual-host** object:
 
-:**WAF object**: Is a mechanism to make users life easy and is described earlier as the implicit 
-                 mode. The idea is that instead of enabling all the rules or typing individual 
-                 rules, the user can just define the type of technologies used by their 
-                 applications and types of attacks that need to be detected and the system will 
-                 decide what needs to be done.
+:**WAF object**: Is a mechanism to make users life easy and is described earlier as 
+                 the implicit mode. The idea is that instead of enabling all the rules 
+                 or typing individual rules, the user can just define the type of 
+                 technologies used by their applications and types of attacks that need 
+                 to be detected and the system will decide what needs to be done.
 
 :**WAF-Rules object**: Is a mechanism for advanced users and is described earlier as the explicit 
                        mode. One can select rules in core-rule-set or volterra-rule-set to be 
