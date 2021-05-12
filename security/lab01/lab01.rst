@@ -167,13 +167,13 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |      **manual** selection of the rule ID/lists from the Core Rules Set(CRS) and Volterra     |
 |                                                                                              |
-|       Rules Set(VRS).                                                                        |    
+|      Rules Set(VRS).                                                                         |    
 |                                                                                              |
 |    * **Create WAF**: Create application firewall object which **auto-generates** a WAF Rules |
 |                                                                                              |
 |      object based on selected criteria and excluded and configure the application settings.  |
 |                                                                                              |
-|    You then will peform the fololowing step:                                                 | 
+|    You then will peform the following step:                                                  | 
 |                                                                                              | 
 |    * **Attach WAF**: Attach the WAF Rules Object or WAF Object to the Virtual Host.          |
 +----------------------------------------------------------------------------------------------+
