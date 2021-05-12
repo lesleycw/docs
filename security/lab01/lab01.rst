@@ -120,25 +120,29 @@ TASK 3: Volt Console (General Navigation)
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Review the **Volt Console** as presented.                                                 |
+| 4. Review the **Volt Console** as presented. Your focused view maybe different.              |
 |                                                                                              |
-| 5. This is the **default** view.  It is the **App View** and is more centric to *Netops*     |
+| 5. Click the **App** tab at the top of the left navigation. It is the **App View** and is    |
 |                                                                                              |
-|    *Personas*.                                                                               |
+|    more centric to **Devops** **Personas**.                                                  |
 +----------------------------------------------------------------------------------------------+
 | |image004|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. This is the **Shared View** and is more centric to *Secops Personas* and is where the     |
+| 6. Click the **Shared** tab at the top of the left navigation. This is the **Shared View**   |
 |                                                                                              |
-|    bulf of all *shared* application security configurations will be made.                    |
+|    and is more centric to **Secops Personas** and is where the bulk of all **shared**        |
+|                                                                                              |
+|    application security configurations will be made.                                         |
 +----------------------------------------------------------------------------------------------+
 | |image005|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. This is the **System View** and is more centric to *Devops Personas*.                     |
+| 7. Click the **System** tab at the top of the left navigation.  This is the **System View**  |
+|                                                                                              |
+|    and is more centric to **Netops Personas**.                                               |
 +----------------------------------------------------------------------------------------------+
 | |image006|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -153,17 +157,21 @@ TASK 2: Configuring Web Application Firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| 1. The following image shows the configuration worflow for creating an appplication firewall |
+| 1. The following describes the configuration workflow for creating an appplication firewall  |
 |                                                                                              |
-|    which fundametally involves three key steps.                                              |
+|    which fundametally involves the following key steps.                                      |
 |                                                                                              |
-| * Create WAF Rule: Create WAF rules object in your namespace. This object contains rules     |
+| * Choosing a prefferred creation approach (one of the below):                                |   
 |                                                                                              |
-|   selected from the Core Rules Set (CRS) and Volterra Rules Set (VRS).                       |    
+| -- Create WAF Rules: Creating a WAF Rules object in this manner is a process of **manual**   |
 |                                                                                              |
-| * Create WAF: Create application firewall object and configure the application settings.     |
+| selection of the rule IDs/lists from the Core Rules Set (CRS) and Volterra Rules Set (VRS).  |    
 |                                                                                              |
-| * Attach WAF to Virtual Host.                                                                |
+| -- Create WAF: Create application firewall object which **auto-generates** a WAF Rules       |
+|                                                                                              |
+| object based on selected criteria and excluded and configure the application settings.       |
+|                                                                                              |
+| * Attach WAF to Virtual Host: Attach the WAF Rules Object or WAF Object to the Virtual Host. |
 +----------------------------------------------------------------------------------------------+
 | |image008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -312,7 +320,7 @@ TASK: 4: Attacking & Adjusting WAF Configuration
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Update Poolicy Through JSON                                                                  |
+| Update Policy through JSON                                                                  |
 +----------------------------------------------------------------------------------------------+
 | |image100|                                                                                   |
 +----------------------------------------------------------------------------------------------+
