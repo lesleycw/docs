@@ -209,7 +209,7 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |    **Mode**: Block (as we will be blocking traffic) Note: Alert is the other option here.    |
 |                                                                                              |
-| 7. In the **Disabled Detections* section, click in the *Detections Tag* input field and in   |
+| 7. In the **Disabled Detections** section, click in the *Detections Tag* input field and in  |
 |                                                                                              |
 |    resulting pop-up menu, select **RCE Attack**.                                             |
 |                                                                                              |
