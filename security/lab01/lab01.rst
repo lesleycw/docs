@@ -261,6 +261,8 @@ TASK: 3: Attaching Web Application Firewall
 
 +----------------------------------------------------------------------------------------------+
 | **ALERT**: Placeholder - determine best/cheapest HTTP Load Balancer configuration.           |
+|                                                                                              |
+| clesley-app.amer-ent.f5demos.com                                                             |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -284,7 +286,7 @@ TASK: 4: Attacking & Adjusting WAF Configuration
 |                                                                                              |
 | 2. Add the following to your query string to your URL and brwose again:                      |
 |                                                                                              |
-|    *?cmd=cat%20/etrc/passwd*                                                                 |
+|    *?cmd=cat%20/etc/passwd*                                                                  |
 |                                                                                              |
 | 3. What was the result?                                                                      |
 +----------------------------------------------------------------------------------------------+
