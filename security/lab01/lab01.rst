@@ -343,7 +343,7 @@ TASK: 6: Attaching a WAF Configuration (WAF Object)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| 1.  After returning to the **New: HTTP Load Balancer** window, scroll to the **Security**    |
+| 1. After returning to the **New: HTTP Load Balancer** window, scroll to the **Security**     |
 |    **Configuration** section.                                                                |
 |                                                                                              |
 | 2. Select **Specify WAF Intent** from the **Select Web Application Firewall (WAF) Config**   |
