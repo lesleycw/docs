@@ -300,7 +300,7 @@ TASK: 3: Building a HTTP Load Balancer and Origin Pool
 |                                                                                              |
 |      *option is selected, a certificate will be generated and maintained based on the*       |
 |                                                                                              |
-|      *selected hostname.*                                                             |
+|      *selected hostname.*                                                                    |
 |                                                                                              |
 |    * Check the option for **HTTP Redirect to HTTPS**                                         |  
 +----------------------------------------------------------------------------------------------+
@@ -320,37 +320,59 @@ TASK: 3: Building a HTTP Load Balancer and Origin Pool
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Something                                                                                    |
+| 6. In the updated **Origin Pools** window, click **Select Origin Pool** and from the         |
+|                                                                                              |
+|    dropdown menu, **Create new origin pool**.                                                |
 +----------------------------------------------------------------------------------------------+
 | |image022|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Something                                                                                    |
+| 7. In the **New: Origin Pool** window, input the following values:                           |
+|                                                                                              |
+|    **Metadata** section:                                                                     |
+|                                                                                              |
+|    * **Name**: <username>-f5-com-pool                                                        |
+|                                                                                              |
+|    **Basic Configuration** section:                                                          |  
+|                                                                                              |
+|    * **Select Type of Origin Server**: Public DNS of Origin Server                           |  
+|                                                                                              |
+|    * **DNS Name**: www.f5.com                                                                |  
 +----------------------------------------------------------------------------------------------+
 | |image023|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Something                                                                                    |
+| 8. Scroll to the **TLS Configuration** section and select **TLS** from the **Enable TLS**    |
+|                                                                                              |
+|    **for Origin Server**.                                                                    |  
+|                                                                                              |
+| 9. Scroll to the bottom and click the **Continue** button.                                   |  
 +----------------------------------------------------------------------------------------------+
 | |image024|                                                                                   |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| Something                                                                                    |
-+----------------------------------------------------------------------------------------------+
+|                                                                                              |
 | |image025|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Something                                                                                    |
+| 10. Rewiew the Origin Pool configuration and click the **Apply** button.                     |
 +----------------------------------------------------------------------------------------------+
 | |image026|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
+TASK: 4: Attaching a WAF Configuration (WAF Object)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------------------------------------------------+
-| Something                                                                                    |
+| 1.  After returning to the **New: HTTP Load Balancer** window, scroll to the **Security**    |
+|                                                                                              |
+|    **Configuration** section.                                                                |  
+|                                                                                              |
+| 2. Select **Specify WAF Intent** from the **Select Web Application Firewall (WAF) Config**   |  
+|                                                                                              |
+|    dropdown menu.                                                                            | 
+|                                                                                              |
+|    *Note: Alternatively a more manually controlled WAF Rules Object could be assigned.*      | 
 +----------------------------------------------------------------------------------------------+
 | |image027|                                                                                   |
 +----------------------------------------------------------------------------------------------+
