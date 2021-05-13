@@ -175,8 +175,8 @@ TASK 4: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 | 2. Select the **App** view top left and select your namespace from the *namespace* dropdown. |
 |                                                                                              |
-|    *Note: For shared configurations, the **shared** namespace is selected when using the*    |
-|    * **shared** view. (for more global configurations).*                                     |
+|    *Note: For shared configurations, the shared namespace is selected when using the*        |
+|    *shared view. (for more global configurations).*                                          |
 +----------------------------------------------------------------------------------------------+
 | |image009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -339,8 +339,8 @@ TASK: 5: Building a HTTP Load Balancer and Origin Pool
 | |image026|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK: 6: Attaching a WAF Configuration (WAF Object)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK: 6: Attaching a WAF Configuration (WAF Object) & Completing HTTP Load Balancer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | 1. After returning to the **New: HTTP Load Balancer** window, scroll to the **Security**     |
@@ -349,49 +349,73 @@ TASK: 6: Attaching a WAF Configuration (WAF Object)
 | 2. Select **Specify WAF Intent** from the **Select Web Application Firewall (WAF) Config**   |
 |    dropdown menu.                                                                            |
 |                                                                                              |
-|    *Note: Alternatively a more manually controlled WAF Rules Object could be assigned.*      |
+|    *Note: If you were editting rather than creating a HTTP LOad Balancer, a WAF Object*      |
+|    *could be attached in a similar manner.*                                                  |
+|                                                                                              |
+|    *Note: Alternatively, a more manually controlled WAF Rules Object could also be assigned.*|
 +----------------------------------------------------------------------------------------------+
 | |image027|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Someething                                                                                   |
+| 3. Scroll to the bottom of **New: HTTP Load Balancer** window, and click the **Save and**    |
+|    **Exit** button.                                                                          |
 +----------------------------------------------------------------------------------------------+
 | |image028|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Someething                                                                                   |
+| 4. After creating the HTTP Load Balancer, the available HTTP Load Balancers will be          |
+|    displayed. You may note the DNS Domain Verification is still pending.  Refresh the screen |
+|    or wait for the auomatic refresh (1min) until your Certificate is valid as shown below.   |
 +----------------------------------------------------------------------------------------------+
 | |image029|                                                                                   |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| Someething                                                                                   |
-+----------------------------------------------------------------------------------------------+
+|                                                                                              |
 | |image030|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
+TASK: 7: Testing and Adjsuting WAF Configuration (WAF Object)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 +----------------------------------------------------------------------------------------------+
-| Someething                                                                                   |
+| 1. In a new browser window, navigate to the hostname defined in Task 5, Step 3.  This        |
+|    should be **<username>-app.amer-ent.f5demos.com**. Confirm its successful.                |
 +----------------------------------------------------------------------------------------------+
 | |image031|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Someething                                                                                   |
+| 2. Now append the following as your query string to your URL and brwose again:               |
+|                                                                                              |
+|    */?cmd=cat%20/etc/passwd*                                                                 |
+|                                                                                              |
+| 3. What was your result?                                                                     |
++----------------------------------------------------------------------------------------------+
+| |image031a|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. Let's now adjust the **WAF Object** by returning to the Volterra Console and selecting    |
+|    **Security** > **App Firewalls**.                                                         |
+|                                                                                              |
+| 5. In the resulting **App Firewalls** list window, find the row of the App Firewall created  |
+|    in Task 4, step 5 and navigating to the end of the row, clicking the three dots *...* and | 
+|    then clicking **Edit** in the pop-up window.                                              |    
 +----------------------------------------------------------------------------------------------+
 | |image032|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Someething                                                                                   |
+| 6. In the App Firewall Edit window, scroll to the **Disabled Detections** section.           |
+|                                                                                              |
+| 7. Clear the **RCE Attack** and **LFI Attack** in the **Detection Tag** input field by       |
+|    clicking on the **x** next to each item.                                                  |
 +----------------------------------------------------------------------------------------------+
 | |image033|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Someething                                                                                   |
+| 8. Once the **Detections Tag** input field is empty, click the **Save and Exit** button.     |
 +----------------------------------------------------------------------------------------------+
 | |image034|                                                                                   |
 +----------------------------------------------------------------------------------------------+
