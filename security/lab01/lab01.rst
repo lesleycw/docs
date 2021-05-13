@@ -266,8 +266,8 @@ TASK 2: Configuring Web Application Firewall
 | |image017|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK: 3: Attaching Web Application Firewall 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TASK: 3: Building a HTTP Load Balancer and Origin Pool
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
 | 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
@@ -280,39 +280,79 @@ TASK: 3: Attaching Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
+| 3. In the **New: HTTP Load Balancer** window, enter or select the following values:          |
 |                                                                                              |
-|    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
+|    **Metadata** section:                                                                     |
 |                                                                                              |
-| 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
+|    * **Name**: <username>-app                                                                |
+|                                                                                              |
+|    **Basic Configuration** section:                                                          |  
+|                                                                                              |
+|    * **Domains**: <username>-app.amer-ent.f5demos.com                                        |  
+|                                                                                              |
+|      *Note: The subdomain .amer-ent.f5demos.com has been delagted to this Volterra tennent.* |
+|                                                                                              |
+|      *As a result, DNS hostnames can be auto generated*                                      |
+|                                                                                              |
+|    * **Select Type of Load Balancer**: HTTPS with Automatic Certificate                      |  
+|                                                                                              |
+|      *Note: Volterra has been integrated with Let's Encrypt.  If the Automatic Certificate * |
+|                                                                                              |
+|      *option is selected, a certificate will be generated and maintained based on the*       |
+|                                                                                              |
+|      *selected hostname.*                                                             |
+|                                                                                              |
+|    * Check the option for **HTTP Redirect to HTTPS**                                         |  
 +----------------------------------------------------------------------------------------------+
 | |image019|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
-|                                                                                              |
-|    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
-|                                                                                              |
-| 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
+| 4. In the **Default Origin Servers** section click the **Configure** link.                   |
 +----------------------------------------------------------------------------------------------+
 | |image020|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
-|                                                                                              |
-|    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
-|                                                                                              |
-| 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
+| 5. In the resulting **Origin Pools** window, click **Add Item**.                             |
 +----------------------------------------------------------------------------------------------+
 | |image021|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **ALERT**: Placeholder - determine best/cheapest HTTP Load Balancer configuration.           |
-|                                                                                              |
-| clesley-app.amer-ent.f5demos.com                                                             |
+| Something                                                                                    |
++----------------------------------------------------------------------------------------------+
+| |image022|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Something                                                                                    |
++----------------------------------------------------------------------------------------------+
+| |image023|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Something                                                                                    |
++----------------------------------------------------------------------------------------------+
+| |image024|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Something                                                                                    |
++----------------------------------------------------------------------------------------------+
+| |image025|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Something                                                                                    |
++----------------------------------------------------------------------------------------------+
+| |image026|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Something                                                                                    |
++----------------------------------------------------------------------------------------------+
+| |image027|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
@@ -344,11 +384,25 @@ TASK: 4: Attaching & Adjusting WAF Configuration
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Select the **Security** > **App Firewall** from left navigation then select *App**        |
+| 6. In the **New: HTTP Load Balancer** window, enter or select the following values:          |
 |                                                                                              |
-|    **Firewalls** from the flyout menu.                                                       |
+|    **Metadata** section:                                                                     |
 |                                                                                              |
-| 5. Find the created WAF Object in Task 2, Step 6 and select the three dots on the same row.  |
+|    * **Name**: <username>-appfw (from Task 2, Step 6)                                        |
+|                                                                                              |
+|    **Basic Configuration** section:                                                          |  
+|                                                                                              |
+|    * **Domains**: <username>-app.amer-ent.f5demos.com                                        |  
+|                                                                                              |
+| 7. In the **Disabled Detections** section, click in the *Detections Tag* input field and in  |
+|                                                                                              |
+|    resulting pop-up menu, select:                                                            |
+|                                                                                              |
+|    * **RCE Attack** (Remote Code Execution Attack)                                           |
+|                                                                                              |
+|    * **LFI Attack** (Local File Inclusion)                                                   |
+|                                                                                              |
+| 8. Click the **Save and Exit** button.                                                       |
 +----------------------------------------------------------------------------------------------+
 | |image018|                                                                                   |
 +----------------------------------------------------------------------------------------------+
