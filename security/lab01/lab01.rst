@@ -291,15 +291,12 @@ TASK: 5: Building a HTTP Load Balancer and Origin Pool
 |    * **Domains**: <username>-app.amer-ent.f5demos.com                                        |
 |                                                                                              |
 |      *Note: The subdomain .amer-ent.f5demos.com has been delagted to this Volterra tennent.* |
-|                                                                                              |
 |      *As a result, DNS hostnames can be auto generated*                                      |
 |                                                                                              |
 |    * **Select Type of Load Balancer**: HTTPS with Automatic Certificate                      |
 |                                                                                              |
-|      *Note: Volterra has been integrated with Let's Encrypt.  If the Automatic Certificate * |
-|                                                                                              |
+|      *Note: Volterra has been integrated with Let's Encrypt.  If the Automatic Certificate*  |
 |      *option is selected, a certificate will be generated and maintained based on the*       |
-|                                                                                              |
 |      *selected hostname.*                                                                    |
 |                                                                                              |
 |    * Check the option for **HTTP Redirect to HTTPS**                                         |
