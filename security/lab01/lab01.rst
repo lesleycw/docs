@@ -270,6 +270,46 @@ TASK: 3: Attaching Web Application Firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
+| 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
+|                                                                                              |
+|    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
+|                                                                                              |
+| 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
++----------------------------------------------------------------------------------------------+
+| |image018|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
+|                                                                                              |
+|    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
+|                                                                                              |
+| 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
++----------------------------------------------------------------------------------------------+
+| |image019|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
+|                                                                                              |
+|    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
+|                                                                                              |
+| 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
++----------------------------------------------------------------------------------------------+
+| |image020|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
+|                                                                                              |
+|    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
+|                                                                                              |
+| 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
++----------------------------------------------------------------------------------------------+
+| |image021|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
 | **ALERT**: Placeholder - determine best/cheapest HTTP Load Balancer configuration.           |
 |                                                                                              |
 | clesley-app.amer-ent.f5demos.com                                                             |
@@ -288,7 +328,7 @@ TASK: 3: Attaching Web Application Firewall
 | |image017|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK: 4: Attacking & Adjusting WAF Configuration
+TASK: 4: Attaching & Adjusting WAF Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
