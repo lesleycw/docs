@@ -153,7 +153,7 @@ TASK 3: Volt Console (General Navigation)
 | |image007|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK 2: Configuring Web Application Firewall  
+TASK 4: Configuring Web Application Firewall  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
@@ -161,20 +161,20 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |    which fundametally involves the following key steps.                                      |
 |                                                                                              |
-|    Choosing a prefferred creation approach (one of the below):                               |   
+|    Choosing a prefferred creation approach (one of the below):                               |
 |                                                                                              |
 |    * **Create WAF Rules**: Creating a WAF Rules object in this manner is a process of        |
 |                                                                                              |
 |      *manual* selection of the rule ID/lists from the Core Rules Set (CRS) and Volterra      |
 |                                                                                              |
-|      Rules Set (VRS).                                                                        |    
+|      Rules Set (VRS).                                                                        |
 |                                                                                              |
 |    * **Create WAF**: Create application firewall object which *auto-generates* a WAF Rules   |
 |                                                                                              |
 |      object based on selected criteria and excluded and configure the application settings.  |
 |                                                                                              |
-|    You then will peform the following step:                                                  | 
-|                                                                                              | 
+|    You then will peform the following step:                                                  |
+|                                                                                              |
 |    * **Attach WAF**: Attach the WAF Rules Object or WAF Object to the Virtual Host.          |
 +----------------------------------------------------------------------------------------------+
 | |image008|                                                                                   |
@@ -191,17 +191,17 @@ TASK 2: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Select **Security** > **App Firewall** from left navigation then select **App Firewalls** |
+| 3. Select **Security** > **App Firewall** from left navigation then select **App Firewalls** |
 |                                                                                              |
 |    from the flyout menu.                                                                     |
 |                                                                                              |
-| 5. Click **Add Firewall** in the right-side, updated panel.                                  |
+| 4. Click **Add Firewall** in the right-side, updated panel.                                  |
 +----------------------------------------------------------------------------------------------+
 | |image010|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the **New: Firewall** window, enter the following values in the **Metadata** and       |
+| 5. In the **New: Firewall** window, enter the following values in the **Metadata** and       |
 |                                                                                              |
 |    **Mode** sections respectively.                                                           |
 |                                                                                              |
@@ -209,7 +209,7 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |    **Mode**: Block (as we will be blocking traffic) Note: Alert is the other option here.    |
 |                                                                                              |
-| 7. In the **Disabled Detections** section, click in the *Detections Tag* input field and in  |
+| 6. In the **Disabled Detections** section, click in the *Detections Tag* input field and in  |
 |                                                                                              |
 |    resulting pop-up menu, select:                                                            |
 |                                                                                              |
@@ -217,13 +217,13 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |    * **LFI Attack** (Local File Inclusion)                                                   |
 |                                                                                              |
-| 8. Click the **Save and Exit** button.                                                       |
+| 7. Click the **Save and Exit** button.                                                       |
 +----------------------------------------------------------------------------------------------+
 | |image011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. Select **Security** > **App Firewall** from left navigation then select **App**           |
+| 8. Select **Security** > **App Firewall** from left navigation then select **App**           |
 |                                                                                              |
 |    **Firewall Rules** from the flyout menu.                                                  |
 +----------------------------------------------------------------------------------------------+
@@ -231,7 +231,7 @@ TASK 2: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. Find the generated *App Firewall Rule* that matches the App Firewall created previously. |
+| 9. Find the generated *App Firewall Rule* that matches the App Firewall created previously.  |
 |                                                                                              |
 |     This will be in the format *generated-waf-<app firewall name>* from step 6 above.        |
 |                                                                                              |
@@ -239,23 +239,23 @@ TASK 2: Configuring Web Application Firewall
 |                                                                                              |
 |     is automatically created. It is also updated when editted.                               |
 |                                                                                              |
-| 11. Click the three dots **...** on the far right of the identified row.                     |
+| 10. Click the three dots **...** on the far right of the identified row.                     |
 |                                                                                              |
-| 12. Click **Edit** in the resulting pop-up window.                                           |
+| 11. Click **Edit** in the resulting pop-up window.                                           |
 +----------------------------------------------------------------------------------------------+
 | |image013|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Review the generated **App Firewall Rule** and the various sections.                     |
+| 12. Review the generated **App Firewall Rule** and the various sections.                     |
 |                                                                                              |
 |     **Note**: This can be adjusted through the **Disabled Detections** option in the WAF     |
 |                                                                                              |
 |     Object.                                                                                  |
 |                                                                                              |
-| 14. Click the horizontal navigation's **JSON** tab to view the API ready, JSON format.       |
+| 13. Click the horizontal navigation's **JSON** tab to view the API ready, JSON format.       |
 |                                                                                              |
-| 15. Scroll to the bottom of **JSON** tab and click **Cancel and Exit**.                      |
+| 14. Scroll to the bottom of **JSON** tab and click **Cancel and Exit**.                      |
 +----------------------------------------------------------------------------------------------+
 | |image014|                                                                                   |
 |                                                                                              |
@@ -266,7 +266,7 @@ TASK 2: Configuring Web Application Firewall
 | |image017|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK: 3: Building a HTTP Load Balancer and Origin Pool
+TASK: 5: Building a HTTP Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
@@ -286,15 +286,15 @@ TASK: 3: Building a HTTP Load Balancer and Origin Pool
 |                                                                                              |
 |    * **Name**: <username>-app                                                                |
 |                                                                                              |
-|    **Basic Configuration** section:                                                          |  
+|    **Basic Configuration** section:                                                          |
 |                                                                                              |
-|    * **Domains**: <username>-app.amer-ent.f5demos.com                                        |  
+|    * **Domains**: <username>-app.amer-ent.f5demos.com                                        |
 |                                                                                              |
 |      *Note: The subdomain .amer-ent.f5demos.com has been delagted to this Volterra tennent.* |
 |                                                                                              |
 |      *As a result, DNS hostnames can be auto generated*                                      |
 |                                                                                              |
-|    * **Select Type of Load Balancer**: HTTPS with Automatic Certificate                      |  
+|    * **Select Type of Load Balancer**: HTTPS with Automatic Certificate                      |
 |                                                                                              |
 |      *Note: Volterra has been integrated with Let's Encrypt.  If the Automatic Certificate * |
 |                                                                                              |
@@ -302,7 +302,7 @@ TASK: 3: Building a HTTP Load Balancer and Origin Pool
 |                                                                                              |
 |      *selected hostname.*                                                                    |
 |                                                                                              |
-|    * Check the option for **HTTP Redirect to HTTPS**                                         |  
+|    * Check the option for **HTTP Redirect to HTTPS**                                         |
 +----------------------------------------------------------------------------------------------+
 | |image019|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -334,11 +334,11 @@ TASK: 3: Building a HTTP Load Balancer and Origin Pool
 |                                                                                              |
 |    * **Name**: <username>-f5-com-pool                                                        |
 |                                                                                              |
-|    **Basic Configuration** section:                                                          |  
+|    **Basic Configuration** section:                                                          |
 |                                                                                              |
-|    * **Select Type of Origin Server**: Public DNS of Origin Server                           |  
+|    * **Select Type of Origin Server**: Public DNS of Origin Server                           |
 |                                                                                              |
-|    * **DNS Name**: www.f5.com                                                                |  
+|    * **DNS Name**: www.f5.com                                                                |
 +----------------------------------------------------------------------------------------------+
 | |image023|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -346,9 +346,9 @@ TASK: 3: Building a HTTP Load Balancer and Origin Pool
 +----------------------------------------------------------------------------------------------+
 | 8. Scroll to the **TLS Configuration** section and select **TLS** from the **Enable TLS**    |
 |                                                                                              |
-|    **for Origin Server**.                                                                    |  
+|    **for Origin Server**.                                                                    |
 |                                                                                              |
-| 9. Scroll to the bottom and click the **Continue** button.                                   |  
+| 9. Scroll to the bottom and click the **Continue** button.                                   |
 +----------------------------------------------------------------------------------------------+
 | |image024|                                                                                   |
 |                                                                                              |
@@ -361,20 +361,63 @@ TASK: 3: Building a HTTP Load Balancer and Origin Pool
 | |image026|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK: 4: Attaching a WAF Configuration (WAF Object)
+TASK: 6: Attaching a WAF Configuration (WAF Object)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 +----------------------------------------------------------------------------------------------+
 | 1.  After returning to the **New: HTTP Load Balancer** window, scroll to the **Security**    |
 |                                                                                              |
-|    **Configuration** section.                                                                |  
+|    **Configuration** section.                                                                |
 |                                                                                              |
-| 2. Select **Specify WAF Intent** from the **Select Web Application Firewall (WAF) Config**   |  
+| 2. Select **Specify WAF Intent** from the **Select Web Application Firewall (WAF) Config**   |
 |                                                                                              |
-|    dropdown menu.                                                                            | 
+|    dropdown menu.                                                                            |
 |                                                                                              |
-|    *Note: Alternatively a more manually controlled WAF Rules Object could be assigned.*      | 
+|    *Note: Alternatively a more manually controlled WAF Rules Object could be assigned.*      |
 +----------------------------------------------------------------------------------------------+
 | |image027|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Someething                                                                                   |
++----------------------------------------------------------------------------------------------+
+| |image028|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Someething                                                                                   |
++----------------------------------------------------------------------------------------------+
+| |image029|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Someething                                                                                   |
++----------------------------------------------------------------------------------------------+
+| |image030|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Someething                                                                                   |
++----------------------------------------------------------------------------------------------+
+| |image031|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Someething                                                                                   |
++----------------------------------------------------------------------------------------------+
+| |image032|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Someething                                                                                   |
++----------------------------------------------------------------------------------------------+
+| |image033|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| Someething                                                                                   |
++----------------------------------------------------------------------------------------------+
+| |image034|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
