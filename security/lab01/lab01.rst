@@ -494,7 +494,7 @@ TASK: 9: Clean-Up & End of Lab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| 1. In the Volterra Console, use the left navigation menu to naigate to **Manage**>**Load**   |
+| 1. In the Volterra Console, use the left navigation menu to naigate to **Manage** > **Load** |
 |    **Balancers** and select **HTTP Load Balancers**.                                         |
 |                                                                                              |
 | 2. In the updated right window, locate the row of the HTTP Load Balancer created in Task 5,  |
@@ -505,7 +505,7 @@ TASK: 9: Clean-Up & End of Lab
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. In the Volterra Console, use the left navigation menu to naigate to **Manage**>**Load**   |
+| 3. In the Volterra Console, use the left navigation menu to naigate to **Manage** > **Load** |
 |    **Balancers** and select **Origin Pools**.                                                |
 |                                                                                              |
 | 4. In the updated right window, locate the row of the Origin Pool created in Task 5, Step 7  |
@@ -516,7 +516,7 @@ TASK: 9: Clean-Up & End of Lab
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. In the Volterra Console, use the left navigation menu to naigate to **Security**>**App**  |
+| 5. In the Volterra Console, use the left navigation menu to naigate to **Security** > **App**|
 |    **Firewall** and select **App Firewalls**.                                                |
 |                                                                                              |
 | 6. In the updated right window, locate the row of the App Firewall created in Task 4, Step 5 |
