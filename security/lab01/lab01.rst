@@ -222,7 +222,7 @@ TASK 4: Configuring Web Application Firewall
 | 9. Find the generated *App Firewall Rule* that matches the App Firewall created previously.  |
 |    This will be in the format *generated-waf-<app firewall name>* from step 6 above.         |
 |                                                                                              |
-|    *Note: When creating the **App Firewall** first, a *generated* **App Firewall Rule** is*  |
+|    *Note: When creating the App Firewall first, a generated App Firewall Rule is             |
 |    *automatically created. It is also updated when editted.*                                 |
 |                                                                                              |
 | 10. Click the three dots **...** on the far right of the identified row.                     |
