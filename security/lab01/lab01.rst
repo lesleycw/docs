@@ -108,7 +108,7 @@ TASK 3: Volt Console (General Navigation)
 |                                                                                              |
 | 2. **Log In** > **Teams or Organization Plans** (This is specfic to region) > **Next**       |
 |                                                                                              |
-| 3. **Log in with Azure** (You must have completed your account onboarding process.**         |
+| 3. **Log in with Azure** (You must have completed your account onboarding process.           |
 |                                                                                              |
 | *Note: Logging on as Tenant Owner provides tenant-wide administration priviledges.*          |
 +----------------------------------------------------------------------------------------------+
@@ -123,7 +123,6 @@ TASK 3: Volt Console (General Navigation)
 | 4. Review the **Volt Console** as presented. Your focused view maybe different.              |
 |                                                                                              |
 | 5. Click the **App** tab at the top of the left navigation. It is the **App View** and is    |
-|                                                                                              |
 |    more centric to **Devops** **Personas**.                                                  |
 +----------------------------------------------------------------------------------------------+
 | |image004|                                                                                   |
@@ -131,9 +130,7 @@ TASK 3: Volt Console (General Navigation)
 
 +----------------------------------------------------------------------------------------------+
 | 6. Click the **Shared** tab at the top of the left navigation. This is the **Shared View**   |
-|                                                                                              |
 |    and is more centric to **Secops Personas** and is where the bulk of all **shared**        |
-|                                                                                              |
 |    application security configurations will be made.                                         |
 +----------------------------------------------------------------------------------------------+
 | |image005|                                                                                   |
@@ -141,7 +138,6 @@ TASK 3: Volt Console (General Navigation)
 
 +----------------------------------------------------------------------------------------------+
 | 7. Click the **System** tab at the top of the left navigation.  This is the **System View**  |
-|                                                                                              |
 |    and is more centric to **Netops Personas**.                                               |
 +----------------------------------------------------------------------------------------------+
 | |image006|                                                                                   |
@@ -158,8 +154,7 @@ TASK 4: Configuring Web Application Firewall
 
 +----------------------------------------------------------------------------------------------+
 | 1. The following describes the configuration workflow for creating an appplication firewall  |
-|                                                                                              |
-|    which fundametally involves the following key steps.                                      |
+|    which fundametally involves the following key steps:                                      |
 |                                                                                              |
 |    Choosing a prefferred creation approach (one of the below):                               |
 |                                                                                              |
@@ -188,7 +183,6 @@ TASK 4: Configuring Web Application Firewall
 
 +----------------------------------------------------------------------------------------------+
 | 3. Select **Security** > **App Firewall** from left navigation then select **App Firewalls** |
-|                                                                                              |
 |    from the flyout menu.                                                                     |
 |                                                                                              |
 | 4. Click **Add Firewall** in the right-side, updated panel.                                  |
@@ -206,7 +200,6 @@ TASK 4: Configuring Web Application Firewall
 |    **Mode**: Block (as we will be blocking traffic) Note: Alert is the other option here.    |
 |                                                                                              |
 | 6. In the **Disabled Detections** section, click in the *Detections Tag* input field and in  |
-|                                                                                              |
 |    resulting pop-up menu, select:                                                            |
 |                                                                                              |
 |    * **RCE Attack** (Remote Code Execution Attack)                                           |
@@ -220,7 +213,6 @@ TASK 4: Configuring Web Application Firewall
 
 +----------------------------------------------------------------------------------------------+
 | 8. Select **Security** > **App Firewall** from left navigation then select **App**           |
-|                                                                                              |
 |    **Firewall Rules** from the flyout menu.                                                  |
 +----------------------------------------------------------------------------------------------+
 | |image012|                                                                                   |
@@ -228,11 +220,10 @@ TASK 4: Configuring Web Application Firewall
 
 +----------------------------------------------------------------------------------------------+
 | 9. Find the generated *App Firewall Rule* that matches the App Firewall created previously.  |
+|    This will be in the format *generated-waf-<app firewall name>* from step 6 above.         |
 |                                                                                              |
-|     This will be in the format *generated-waf-<app firewall name>* from step 6 above.        |
-|                                                                                              |
-|     *Note: When creating the **App Firewall** first, a *generated* **App Firewall Rule** is* |
-|     *automatically created. It is also updated when editted.*                                |
+|    *Note: When creating the **App Firewall** first, a *generated* **App Firewall Rule** is*  |
+|    *automatically created. It is also updated when editted.*                                 |
 |                                                                                              |
 | 10. Click the three dots **...** on the far right of the identified row.                     |
 |                                                                                              |
@@ -244,7 +235,7 @@ TASK 4: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 | 12. Review the generated **App Firewall Rule** and the various sections.                     |
 |                                                                                              |
-|     *Note: This can be adjusted through the **Disabled Detections** option in the WAF Object*|
+|     *Note: This can be adjusted through the Disabled Detections option in the WAF Object*    |
 |                                                                                              |
 | 13. Click the horizontal navigation's **JSON** tab to view the API ready, JSON format.       |
 |                                                                                              |
@@ -264,7 +255,6 @@ TASK: 5: Building a HTTP Load Balancer and Origin Pool
 
 +----------------------------------------------------------------------------------------------+
 | 1. Remaining in the **App** view, select **Manage** > **Load Balancers** from left           |
-|                                                                                              |
 |    navigation then select **HTTP Load Balancers** from the flyout menu.                      |
 |                                                                                              |
 | 2. Click **Add HTTP Load Balancer** in the right-side, updated panel.                        |
@@ -311,7 +301,6 @@ TASK: 5: Building a HTTP Load Balancer and Origin Pool
 
 +----------------------------------------------------------------------------------------------+
 | 6. In the updated **Origin Pools** window, click **Select Origin Pool** and from the         |
-|                                                                                              |
 |    dropdown menu, **Create new origin pool**.                                                |
 +----------------------------------------------------------------------------------------------+
 | |image022|                                                                                   |
@@ -335,7 +324,6 @@ TASK: 5: Building a HTTP Load Balancer and Origin Pool
 
 +----------------------------------------------------------------------------------------------+
 | 8. Scroll to the **TLS Configuration** section and select **TLS** from the **Enable TLS**    |
-|                                                                                              |
 |    **for Origin Server**.                                                                    |
 |                                                                                              |
 | 9. Scroll to the bottom and click the **Continue** button.                                   |
@@ -356,11 +344,9 @@ TASK: 6: Attaching a WAF Configuration (WAF Object)
 
 +----------------------------------------------------------------------------------------------+
 | 1.  After returning to the **New: HTTP Load Balancer** window, scroll to the **Security**    |
-|                                                                                              |
 |    **Configuration** section.                                                                |
 |                                                                                              |
 | 2. Select **Specify WAF Intent** from the **Select Web Application Firewall (WAF) Config**   |
-|                                                                                              |
 |    dropdown menu.                                                                            |
 |                                                                                              |
 |    *Note: Alternatively a more manually controlled WAF Rules Object could be assigned.*      |
