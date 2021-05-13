@@ -110,7 +110,7 @@ TASK 3: Volt Console (General Navigation)
 |                                                                                              |
 | 3. **Log in with Azure** (You must have completed your account onboarding process.**         |
 |                                                                                              |
-| **NOTE**: *Logging on as Tenant Owner provides tenant-wide administration priviledges.*      |
+| *Note: Logging on as Tenant Owner provides tenant-wide administration priviledges.*          |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
 |                                                                                              |
@@ -164,13 +164,10 @@ TASK 4: Configuring Web Application Firewall
 |    Choosing a prefferred creation approach (one of the below):                               |
 |                                                                                              |
 |    * **Create WAF Rules**: Creating a WAF Rules object in this manner is a process of        |
-|                                                                                              |
 |      *manual* selection of the rule ID/lists from the Core Rules Set (CRS) and Volterra      |
-|                                                                                              |
 |      Rules Set (VRS).                                                                        |
 |                                                                                              |
 |    * **Create WAF**: Create application firewall object which *auto-generates* a WAF Rules   |
-|                                                                                              |
 |      object based on selected criteria and excluded and configure the application settings.  |
 |                                                                                              |
 |    You then will peform the following step:                                                  |
@@ -183,9 +180,8 @@ TASK 4: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 | 2. Select the **App** view top left and select your namespace from the *namespace* dropdown. |
 |                                                                                              |
-|    **Note**: For shared configurations, the **shared** namespace is selected when using the  |
-|                                                                                              |
-|    **shared** view. (for more global configurations).                                        |
+|    *Note: For shared configurations, the **shared** namespace is selected when using the*    |
+|    * **shared** view. (for more global configurations).*                                     |
 +----------------------------------------------------------------------------------------------+
 | |image009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -235,9 +231,8 @@ TASK 4: Configuring Web Application Firewall
 |                                                                                              |
 |     This will be in the format *generated-waf-<app firewall name>* from step 6 above.        |
 |                                                                                              |
-|     **Note**: When creating the **App Firewall** first, a *generated* **App Firewall Rule**  |
-|                                                                                              |
-|     is automatically created. It is also updated when editted.                               |
+|     *Note: When creating the **App Firewall** first, a *generated* **App Firewall Rule** is* |
+|     *automatically created. It is also updated when editted.*                                |
 |                                                                                              |
 | 10. Click the three dots **...** on the far right of the identified row.                     |
 |                                                                                              |
@@ -249,9 +244,7 @@ TASK 4: Configuring Web Application Firewall
 +----------------------------------------------------------------------------------------------+
 | 12. Review the generated **App Firewall Rule** and the various sections.                     |
 |                                                                                              |
-|     **Note**: This can be adjusted through the **Disabled Detections** option in the WAF     |
-|                                                                                              |
-|     Object.                                                                                  |
+|     *Note: This can be adjusted through the **Disabled Detections** option in the WAF Object*|
 |                                                                                              |
 | 13. Click the horizontal navigation's **JSON** tab to view the API ready, JSON format.       |
 |                                                                                              |
