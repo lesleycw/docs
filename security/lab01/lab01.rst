@@ -434,64 +434,107 @@ TASK: 8: Reviewing Analytics & Security Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| Somewthinbg                                                                                  |
+| 1. In the Volterra Console, use the left navigation menu to naigate to **Virtual Hosts**>    |
+|    **HTTP Load Balancers**.                                                                  |
+|                                                                                              |
+| 2. In the updated right window, hover over the HTTP Load Balancer create in Task 5, Step 3   |
+|    and click the **General Monitoring** link.                                                |
+|                                                                                              |
+|    *Note: This is summary view of all created HTTP Load Balancers.*                          |
+|                                                                                              |
+|    *Note: Because Redirect HTTP to HTTPS was selected during HTTP Load Balancer creation,*   |
+|    *a redirect HTTP Load Balancer is also present.*                                          |
 +----------------------------------------------------------------------------------------------+
 | |image036|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Somewthinbg                                                                                  |
+| 3. Review the available anayltics regarding this HTTP Load Balancer, when complete use the   |
+|    the drop menu which currently shows **General Monitoring** to select **Security**         |
+|    **Monitoring**.                                                                           |
+|                                                                                              |   
+|    *Note: You can refresh the site or script curl the site to add addtional statistics.*     |
 +----------------------------------------------------------------------------------------------+
 | |image037|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Somewthinbg                                                                                  |
+| 4. In the Security Monoring, **Dashboard** you can review applicable security event          |
+|    information.                                                                              |
+|                                                                                              |
+| 5. In the bottom right of the Dashboard view, find the **Recent WAF and Policy Events**      |
+|    and click a security event as shown.                                                      |
 +----------------------------------------------------------------------------------------------+
 | |image038|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Somewthinbg                                                                                  |
+| 6. The resulting window provides additional anayltics, details and actions that can be used. |
+|    Expand the latest security event by clicking the **>** symbol to review additional        |
+|    security detail.                                                                          |
 +----------------------------------------------------------------------------------------------+
 | |image039|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Somewthinbg                                                                                  |
+| 7. You can scroll through the security detail located here for additional information        |
+|    reagarding the event.                                                                     |
 +----------------------------------------------------------------------------------------------+
 | |image040|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| **STOP**: Proir to executing the clean-up steps that follow, complete any additional review  |
+| you wish to do. Enjoy                                                                        |
++----------------------------------------------------------------------------------------------+
+| |imageSTOP|                                                                                  |
 +----------------------------------------------------------------------------------------------+
 
 TASK: 9: Clean-Up & End of Lab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------+
-| 1. Proir to executing the clean-up steps that follow, complete any additional review you     |
-|    wish to do.                                                                               |
+| 1. In the Volterra Console, use the left navigation menu to naigate to **Manage**>**Load**   |
+|    **Balancers** and select **HTTP Load Balancers**.                                         |
+|                                                                                              |
+| 2. In the updated right window, locate the row of the HTTP Load Balancer created in Task 5,  |
+|    Step 3 and click the three dots **...** at the far right of the row, and then click       |
+|    **Delete** in the resulting pop-up window.                                                |
 +----------------------------------------------------------------------------------------------+
 | |image041|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Somewthinbg                                                                                  |
+| 3. In the Volterra Console, use the left navigation menu to naigate to **Manage**>**Load**   |
+|    **Balancers** and select **Origin Pools**.                                                |
+|                                                                                              |
+| 4. In the updated right window, locate the row of the Origin Pool created in Task 5, Step 7  |
+|    and click the three dots **...** at the far right of the row, and then click              |
+|    **Delete** in the resulting pop-up window.                                                |
 +----------------------------------------------------------------------------------------------+
 | |image042|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| Somewthinbg                                                                                  |
+| 5. In the Volterra Console, use the left navigation menu to naigate to **Security**>**App**  |
+|    **Firewall** and select **App Firewalls**.                                                |
+|                                                                                              |
+| 6. In the updated right window, locate the row of the App Firewall created in Task 4, Step 5 |
+|    and click the three dots **...** at the far right of the row, and then click              |
+|    **Delete** in the resulting pop-up window.                                                |
 +----------------------------------------------------------------------------------------------+
 | |image043|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. This concludes this Lab, feel free to run through the lab again as needed.                |
+| 7. This concludes this Lab, feel free to run through the lab again as needed.                |
 +----------------------------------------------------------------------------------------------+
-| |image000|                                                                                   |
+| |imageEND|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-.. |image000| image:: media/image001.png
+.. |imageEND| image:: media/image001.png
+   :width: 800px
+.. |imageSTOP| image:: media/image002.png
    :width: 800px
 .. |image001| image:: media/lab01-001.png
    :width: 800px
